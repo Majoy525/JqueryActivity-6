@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Button - Default functionality</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <style>
+  
+.main-content {
+    background-color: #f8e6ff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #a400b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #800080;
+}
+
+.ui-button {
+    background-color: #e6b3ff; 
+    color: #4d004d; 
+    border: 1px solid #b300b3; 
+    padding: 10px;
+    font-weight: bold;
+}
+
+.ui-button:hover {
+    background-color: #bd4cbd; 
+}
+
+.ui-corner-all {
+    border-radius: 5px;
+}
+</style>
+  <script>
+    $( function() {
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+      $( "button, input, a" ).on( "click", function( event ) {
+        event.preventDefault();
+      } );
+    } );
+    </script>
+</head>
+<body>
+    <header>
+        <h1>*JQUERY SESSION-MARYJOY*</h1>
+    </header>
+
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="../Home.html">Home</a></li>
+                <li><a href="../pages/Accordion.html">Accordion</a></li>
+                <li><a href="../pages/Autocomplete.html">Autocomplete</a></li>
+                <li><a href="../pages/Button.html">Button</a></li>
+                <li><a href="../pages/Checkboxradio.html">Checkboxradio</a></li>
+                <li><a href="../pages/Controlgroup.html">Controlgroup</a></li>
+                <li><a href="../pages/Datepicker.html">Datepicker</a></li>
+                <li><a href="../pages/Dialog.html">Dialog</a></li>
+                <li><a href="../pages/Menu.html">Menu</a></li>
+                <li><a href="../pages/Progressbar.html">Progressbar</a></li>
+                <li><a href="../pages/Selectmenu.html">Selectmenu</a></li>
+                <li><a href="../pages/Slider.html">Slider</a></li>
+                <li><a href="../pages/Spinner.html">Spinner</a></li>
+                <li><a href="../pages/Tabs.html">Tabs</a></li>
+                <li><a href="../pages/Tooltip.html">Tooltip</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+          <title>jQuery UI Button - Default functionality</title>
+        <div class="widget">
+          <h1>Widget Buttons</h1>
+
+          <button>A button element</button>
+          <button>A submit button</button>
+          <button>An anchor</button>
+
+        <h1>CSS Buttons</h1>
+        <button class="ui-button ui-widget ui-corner-all">A button element</button>
+        <button class="ui-button ui-widget ui-corner-all">A submit button</button>
+        <button class="ui-button ui-widget ui-corner-all">An anchor</button>
+        </div>
+  </div>  
+</div>      
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#idbutton").click(function() {
+                alert("ID Button was clicked");
+            });
+
+            $(".classbutton").click(function() {
+                alert("Class Button was clicked");
+            });
+
+            $("#Information").click(function() {
+                $("#showInfo").show();
+            });
+
+            $("#hideInfo").click(function() {
+                $("#showInfo").hide();
+            });
+        });
+    </script>
+    <footer>
+      <p>College of Information and Computing Sciences &copy; 2022</p>  
+  </footer>
+ 
+</body>
+</html>

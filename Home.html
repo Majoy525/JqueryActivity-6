@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY SESSION-MARYJOY</title>
+    <link rel="stylesheet" href="/css/custom.css">
+    <style>
+        .toggler { width: 500px; height: 200px; }
+        #button { padding: .5em 1em; text-decoration: none; }
+        #effect { width: 240px; height: 170px; padding: 0.4em; position: relative; }
+        #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+        </style>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e1a3a;
+            padding-top: 70px;
+            color:#b300b3; 
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #d9a8ff;
+        color: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            gap: 20px;
+        }
+        .nav {
+            flex: 1;
+            padding: 20px;
+            background-color:#6d3a8c;
+            border-radius: 8px;
+            height: fit-content;
+            box-shadow:0 6px 15px rgba(214, 212, 212, 0.911);
+        }
+
+        .nav ul {
+            list-style: none;
+        }
+
+        .nav ul li a {
+            color: #e9e0e6;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav ul li a:hover {
+            background-color: linear-gradient(135deg, #d584ff, #f724f7);
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 3;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Button styling */
+        button {
+            background-color:vio;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 4px 2px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: rgb(185, 29, 178);
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4c156f;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav {
+                margin: 0 0 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>*JQUERY SESSION-MARYJOY*</h1>
+    </header>
+
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="../Home.html">Home</a></li>
+                <li><a href="../pages/Accordion.html">Accordion</a></li>
+                <li><a href="../pages/Autocomplete.html">Autocomplete</a></li>
+                <li><a href="../pages/Button.html">Button</a></li>
+                <li><a href="../pages/Checkboxradio.html">Checkboxradio</a></li>
+                <li><a href="../pages/Controlgroup.html">Controlgroup</a></li>
+                <li><a href="../pages/Datepicker.html">Datepicker</a></li>
+                <li><a href="../pages/Dialog.html">Dialog</a></li>
+                <li><a href="../pages/Menu.html">Menu</a></li>
+                <li><a href="../pages/Progressbar.html">Progressbar</a></li>
+                <li><a href="../pages/Selectmenu.html">Selectmenu</a></li>
+                <li><a href="../pages/Slider.html">Slider</a></li>
+                <li><a href="../pages/Spinner.html">Spinner</a></li>
+                <li><a href="../pages/Tabs.html">Tabs</a></li>
+                <li><a href="../pages/Tooltip.html">Tooltip</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <h1>HOME</h1>
+            
+            <button onclick="confirmSubmission();">Click Me</button>
+            <button>JQuery Button</button>
+            <button id="idbutton">ID</button>
+            <button class="classbutton">CLASS</button>
+
+            <button id="Information">Click Me to Show Info</button>
+            <button id="hideInfo">Click Me to Hide Info</button>
+            <h1 id="showInfo" style="display: none;">You UnHide Me</h1>
+        </div>
+    </div>
+
+    <footer>
+        <p>College of Information and Computing Sciences &copy; 2022</p>  
+    </footer>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $("#idbutton").click(function() {
+                alert("ID Button was clicked");
+            });
+
+            $(".classbutton").click(function() {
+                alert("Class Button was clicked");
+            });
+
+            $("#Information").click(function() {
+                $("#showInfo").show();
+            });
+
+            $("#hideInfo").click(function() {
+                $("#showInfo").hide();
+            });
+        });
+    </script>
+</body>
+</html>

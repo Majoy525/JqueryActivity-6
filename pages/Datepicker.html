@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Datepicker - Display inline</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <style>
+    #zoom-button {
+      width: 55px;
+    }
+    #fontname-button,
+    #fontsize-button {
+      width: 45px;
+    }
+    #forecolor-button {
+      width: 50px;
+    }
+    #hilitecolor-button {
+      width: 70px;
+    }
+    #bold {
+      font-weight: bold;
+    }
+    #italic {
+      font-style: italic;
+    }
+    #underline {
+      text-decoration: underline;
+    }
+    .toolbar {
+      font-size: .75em;
+      background-color: #ca9cd4;
+      display: inline-block;
+    }
+    #page {
+      width: 440px;
+      left: 50%;
+      position: relative;
+      margin-left: -226px;
+      height: 450px;
+      border: 1px solid #888;
+      box-shadow: 7px 7px 3px #ccc;
+      font-size: 11px;
+      font-family: "Lucida Grande";
+      zoom: 100%;
+      padding: 5px;
+      white-space: pre-line;
+      overflow: scroll;
+    }
+    .wrap {
+      width: 588px;
+    }
+    
+  </style>
+</head>
+<body>
+    <header>
+        <h1>*JQUERY SESSION-MARYJOY*</h1>
+    </header>
+
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="../Home.html">Home</a></li>
+                <li><a href="../pages/Accordion.html">Accordion</a></li>
+                <li><a href="../pages/Autocomplete.html">Autocomplete</a></li>
+                <li><a href="../pages/Button.html">Button</a></li>
+                <li><a href="../pages/Checkboxradio.html">Checkboxradio</a></li>
+                <li><a href="../pages/Controlgroup.html">Controlgroup</a></li>
+                <li><a href="../pages/Datepicker.html">Datepicker</a></li>
+                <li><a href="../pages/Dialog.html">Dialog</a></li>
+                <li><a href="../pages/Menu.html">Menu</a></li>
+                <li><a href="../pages/Progressbar.html">Progressbar</a></li>
+                <li><a href="../pages/Selectmenu.html">Selectmenu</a></li>
+                <li><a href="../pages/Slider.html">Slider</a></li>
+                <li><a href="../pages/Spinner.html">Spinner</a></li>
+                <li><a href="../pages/Tabs.html">Tabs</a></li>
+                <li><a href="../pages/Tooltip.html">Tooltip</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+          <h1>jQuery UI Datepicker - Display inline</h1>
+
+          <p>Date: <input type="text" id="datepicker"></p>
+
+          <p>Animations:<br>
+            <select id="anim">
+              <option value="show">Show (default)</option>
+              <option value="slideDown">Slide down</option>
+              <option value="fadeIn">Fade in</option>
+              <option value="blind">Blind (UI Effect)</option>
+              <option value="bounce">Bounce (UI Effect)</option>
+              <option value="clip">Clip (UI Effect)</option>
+              <option value="drop">Drop (UI Effect)</option>
+              <option value="fold">Fold (UI Effect)</option>
+              <option value="slide">Slide (UI Effect)</option>
+              <option value="">None</option>
+            </select>
+          </p>
+      </div>
+</div>      
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+    <footer>
+      <p>College of Information and Computing Sciences &copy; 2022</p>  
+  </footer>
+ 
+</body>
+</html>

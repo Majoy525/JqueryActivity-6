@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Slider - Colorpicker</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <style>
+    #red, #green, #blue {
+      float: left;
+      clear: left;
+      width: 300px;
+      margin: 15px;
+    }
+    #swatch {
+      width: 120px;
+      height: 100px;
+      margin-top: 18px;
+      margin-left: 350px;
+      background-image: none;
+    }
+    #red .ui-slider-range { background: #ef2929; }
+    #red .ui-slider-handle { border-color: #ef2929; }
+    #green .ui-slider-range { background: #8ae234; }
+    #green .ui-slider-handle { border-color: #8ae234; }
+    #blue .ui-slider-range { background: #729fcf; }
+    #blue .ui-slider-handle { border-color: #729fcf; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>*JQUERY SESSION-MARYJOY*</h1>
+    </header>
+
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="../Home.html">Home</a></li>
+                <li><a href="../pages/Accordion.html">Accordion</a></li>
+                <li><a href="../pages/Autocomplete.html">Autocomplete</a></li>
+                <li><a href="../pages/Button.html">Button</a></li>
+                <li><a href="../pages/Checkboxradio.html">Checkboxradio</a></li>
+                <li><a href="../pages/Controlgroup.html">Controlgroup</a></li>
+                <li><a href="../pages/Datepicker.html">Datepicker</a></li>
+                <li><a href="../pages/Dialog.html">Dialog</a></li>
+                <li><a href="../pages/Menu.html">Menu</a></li>
+                <li><a href="../pages/Progressbar.html">Progressbar</a></li>
+                <li><a href="../pages/Selectmenu.html">Selectmenu</a></li>
+                <li><a href="../pages/Slider.html">Slider</a></li>
+                <li><a href="../pages/Spinner.html">Spinner</a></li>
+                <li><a href="../pages/Tabs.html">Tabs</a></li>
+                <li><a href="../pages/Tooltip.html">Tooltip</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+          <h1>jQuery UI Slider - Colorpicker</h1>
+          <body class="ui-widget-content" style="border:0;">
+ 
+            <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+              <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
+              Simple Colorpicker
+            </p>
+             
+            <div id="red"></div>
+            <div id="green"></div>
+            <div id="blue"></div>
+             
+            <div id="swatch" class="ui-widget-content ui-corner-all"></div>
+             </div>
+            </div>
+      </div>
+</div>      
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      function hexFromRGB(r, g, b) {
+        var hex = [
+          r.toString( 16 ),
+          g.toString( 16 ),
+          b.toString( 16 )
+        ];
+        $.each( hex, function( nr, val ) {
+          if ( val.length === 1 ) {
+            hex[ nr ] = "0" + val;
+          }
+        });
+        return hex.join( "" ).toUpperCase();
+      }
+      function refreshSwatch() {
+        var red = $( "#red" ).slider( "value" ),
+          green = $( "#green" ).slider( "value" ),
+          blue = $( "#blue" ).slider( "value" ),
+          hex = hexFromRGB( red, green, blue );
+        $( "#swatch" ).css( "background-color", "#" + hex );
+      }
+   
+      $( "#red, #green, #blue" ).slider({
+        orientation: "horizontal",
+        range: "min",
+        max: 255,
+        value: 127,
+        slide: refreshSwatch,
+        change: refreshSwatch
+      });
+      $( "#red" ).slider( "value", 255 );
+      $( "#green" ).slider( "value", 140 );
+      $( "#blue" ).slider( "value", 60 );
+    } );
+    </script>
+    <footer>
+      <p>College of Information and Computing Sciences &copy; 2022</p>  
+  </footer>
+ 
+</body>
+</html>

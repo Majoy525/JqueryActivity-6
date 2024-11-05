@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Progressbar - Download Dialog</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <style>
+
+
+#dialog {
+    background-color: #f2c5ff; 
+    border: 2px solid #b300b3; 
+    padding: 20px;
+    border-radius: 8px;
+    color: #4d004d; 
+}
+
+.progress-label {
+    color: #800080; 
+    font-weight: bold;
+}
+
+#progressbar {
+    background-color: #e6b3ff; 
+    border: 1px solid #b300b3; 
+    height: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#progressbar .ui-progressbar-value {
+    background-color: #b300b3; 
+}
+
+button, #downloadButton {
+    background-color: #b300b3; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover, #downloadButton:hover {
+    background-color: #800080; 
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>*JQUERY SESSION-MARYJOY*</h1>
+    </header>
+
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="../Home.html">Home</a></li>
+                <li><a href="../pages/Accordion.html">Accordion</a></li>
+                <li><a href="../pages/Autocomplete.html">Autocomplete</a></li>
+                <li><a href="../pages/Button.html">Button</a></li>
+                <li><a href="../pages/Checkboxradio.html">Checkboxradio</a></li>
+                <li><a href="../pages/Controlgroup.html">Controlgroup</a></li>
+                <li><a href="../pages/Datepicker.html">Datepicker</a></li>
+                <li><a href="../pages/Dialog.html">Dialog</a></li>
+                <li><a href="../pages/Menu.html">Menu</a></li>
+                <li><a href="../pages/Progressbar.html">Progressbar</a></li>
+                <li><a href="../pages/Selectmenu.html">Selectmenu</a></li>
+                <li><a href="../pages/Slider.html">Slider</a></li>
+                <li><a href="../pages/Spinner.html">Spinner</a></li>
+                <li><a href="../pages/Tabs.html">Tabs</a></li>
+                <li><a href="../pages/Tooltip.html">Tooltip</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+          <h1>jQuery UI Menu - Icons</h1>
+          <div id="dialog" title="File Download">
+            <div class="progress-label">Starting download...</div>
+            <div id="progressbar"></div>
+          </div>
+          <button id="downloadButton">Start Download</button>
+      </div>
+</div>      
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      var progressTimer,
+        progressbar = $( "#progressbar" ),
+        progressLabel = $( ".progress-label" ),
+        dialogButtons = [{
+          text: "Cancel Download",
+          click: closeDownload
+        }],
+        dialog = $( "#dialog" ).dialog({
+          autoOpen: false,
+          closeOnEscape: false,
+          resizable: false,
+          buttons: dialogButtons,
+          open: function() {
+            progressTimer = setTimeout( progress, 2000 );
+          },
+          beforeClose: function() {
+            downloadButton.button( "option", {
+              disabled: false,
+              label: "Start Download"
+            });
+          }
+        }),
+        downloadButton = $( "#downloadButton" )
+          .button()
+          .on( "click", function() {
+            $( this ).button( "option", {
+              disabled: true,
+              label: "Downloading..."
+            });
+            dialog.dialog( "open" );
+          });
+   
+      progressbar.progressbar({
+        value: false,
+        change: function() {
+          progressLabel.text( "Current Progress: " + progressbar.progressbar( "value" ) + "%" );
+        },
+        complete: function() {
+          progressLabel.text( "Complete!" );
+          dialog.dialog( "option", "buttons", [{
+            text: "Close",
+            click: closeDownload
+          }]);
+          $(".ui-dialog button").last().trigger( "focus" );
+        }
+      });
+   
+      function progress() {
+        var val = progressbar.progressbar( "value" ) || 0;
+   
+        progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
+   
+        if ( val <= 99 ) {
+          progressTimer = setTimeout( progress, 50 );
+        }
+      }
+   
+      function closeDownload() {
+        clearTimeout( progressTimer );
+        dialog
+          .dialog( "option", "buttons", dialogButtons )
+          .dialog( "close" );
+        progressbar.progressbar( "value", false );
+        progressLabel
+          .text( "Starting download..." );
+        downloadButton.trigger( "focus" );
+      }
+    } );
+    </script>
+    <footer>
+      <p>College of Information and Computing Sciences &copy; 2022</p>  
+  </footer>
+ 
+</body>
+</html>
